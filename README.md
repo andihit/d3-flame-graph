@@ -302,6 +302,14 @@ flamegraph.setSearchMatch(function(d, term) {
 If called with no arguments, `setSearchMatch` will return reset the search
 match function.
 
+<a name="merge" href="#merge">#</a> flamegraph.<b>merge</b>(<i>samples</i>)
+
+Merges the current nodes with the given nodes.
+
+<a name="refresh" href="#refresh">#</a> flamegraph.<b>refresh</b>(<i>samples</i>)
+
+Replaces the current set of nodes with the given nodes.
+
 **All API functions will return the flame graph object if no other behavior is specified in the function details.**
 
 ## Issues

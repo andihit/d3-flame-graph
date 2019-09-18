@@ -736,6 +736,19 @@ export default function () {
     })
     selection = selection.datum(newRoot)
     update()
+    return chart
+  }
+
+  chart.refresh = function (samples) {
+    var newRoot // Need to re-create hierarchy after data changes.
+    selection.each(function (root) {
+      root.data = samples
+      newRoot = hierarchy(root.data, getChildren)
+      adoptNode(newRoot)
+    })
+    selection = selection.datum(newRoot)
+    update()
+    return chart
   }
 
   chart.setColorMapper = function (_) {

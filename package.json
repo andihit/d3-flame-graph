@@ -7,6 +7,7 @@
     "example": "examples"
   },
   "scripts": {
+    "build": "gulp build",
     "pretest": "gulp build",
     "test": "tape 'test/**/*-test.js'",
     "prepare": "npm run test",
