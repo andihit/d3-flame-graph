@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Flame Graph</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>Flame Graph</h1>
+        <nav>
+          <form id="form">
+            <a id="reset-btn" class="btn">Reset zoom</a>
+            <input type="text" id="term">
+            <a id="search-btn" class="btn btn-primary">Search</a>
+          </form>
+        </nav>
+      </div>
+      <div id="chart">
+      </div>
+      <hr>
+      <div id="details">
+      </div>
+    </div>
+    <script>flamegraph(/** @flamegraph_params **/);</script>
+  </body>
+</html>
