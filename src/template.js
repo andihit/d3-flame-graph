@@ -6,7 +6,7 @@ import './template.css'
 
 class FlameGraphUI {
     constructor (stacks, options) {
-        this.stacks = stacks
+        this.stacks = stacks || { name: 'placeholder', value: 0, children: [] }
         this.options = options
     }
 
