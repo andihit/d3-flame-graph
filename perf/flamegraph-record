@@ -1,2 +1,2 @@
 #!/usr/bin/sh
-perf record "$@"
+perf record -g "$@"

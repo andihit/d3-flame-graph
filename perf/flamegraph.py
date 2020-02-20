@@ -11,6 +11,8 @@
 #  perf script flamegraph -a -g -F 99 sleep 60
 #
 # Written by Andreas Gerstmayr <agerstmayr@redhat.com>
+# Flame Graphs invented by Brendan Gregg <bgregg@netflix.com>
+# Works in tandem with d3-flame-graph by Martin Spier <mspier@netflix.com>
 
 import sys
 import os
@@ -34,9 +36,10 @@ class FlameGraphCLI:
         if self.args.format == "html" and \
                 not os.path.isfile(self.args.template):
             print(f"Flame Graph template '{self.args.template}' does not " +
-                  f"exist. Please install the d3-flame-graph package or " +
-                  f"specify an existing flame graph template using the " +
-                  f"--template parameter.", file=sys.stderr)
+                  f"exist. Please install the d3-flame-graph package, " +
+                  f"specify an existing flame graph template " +
+                  f"(--template PATH) or another output format " +
+                  f"(--format FORMAT).", file=sys.stderr)
             sys.exit(1)
 
     def find_or_create_node(self, node, name, dso):
